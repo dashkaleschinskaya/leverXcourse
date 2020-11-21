@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../dist/style.css">
+    <title>Main Page</title>
+</head>
+<body onload="window.home.outputAllPersons(); window.home.buttonsForEnter() " >
+<header class="header">
+    <div class="container" style="display: flex;">
+        <a href="/views/index" class="logo" >Course Work</a>
+        <div class="for-enter" ></div>
+    </div>
+</header>
+
+<div class="main">
+        <div class="switch">
+
+            <div>
+            <button class="change-grid-button" id="change-grid" style="margin-right: 10px; " onclick="window.home.outputAllPersons(this.id)">&#9632</button>
+        </div>
+            <div>
+            <button class="change-table-button" id="change-table"  onclick="window.home.outputAllPersons(this.id);">&#8801</button>
+            </div>
+        </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="box" >
+                <div style="width:250px">
+                    <div class="form-group">
+                    <label for="search">Строка поиска:</label>
+                    <input type="text" id="search" name="search" placeholder="Введите имя и фамилию..."/>
+                    </div>
+                    <div class="button" style="align-items: center; margin-bottom: 16px;">
+                        <button class="search-button" onclick="window.home.searchPersons()" style="justify-content: center !important" >Поиск</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content view">
+            <div id="content"></div>
+            <div id = "demo"></div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/template" id="grid">
+    <div class="grid-item" id="id_person" onclick='window.home.outputPerson(this.id)'>
+     <img alt='' src="image" width="150" height="150" style="border-radius: 200px;">
+                                            <h6><b>name surname</b></h6>
+                                           <hr>
+                       <div>
+                           <p><b>Отдел:</b>department</p>
+                           <p><b>Комната:</b>room</p>
+                       </div>
+    </div>
+</script>
+<script type="text/template" id="table_thead">
+     <thead>
+                    <tr>
+                            <th scope="col">Фото</th>
+                            <th scope="col" id='NS' onclick='sort(this.id)'>Инициалы</th>
+                            <th scope="col" id='department' onclick='sort(this.id)'>Отдел</th>
+                            <th scope="col" id='room' onclick='sort(this.id)'>Комната</th>
+                        </tr>
+                    </thead>
+</script>
+<script type="text/template" id="table_body">
+  <tr id="id_of_person" onclick='window.home.outputPerson(this.id)'>
+          <td><img alt='' src="image" width="60" height="60" style="border-radius: 200px;"></td>
+          <td>name surname</td>
+          <td>department</td>
+          <td>room</td>
+  </tr>
+</script>
+<script type="text/template" id="about">
+        <div class="content view" >
+            <div class="about_main" >
+                <img alt='' src="image" width="200" height="200" >
+
+                <h6><b>name surname</b></h6>
+                <input value="ID: person_id" disabled >
+            </div>
+            <div class="about-info">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2"> <h4>GENERAL INFO</h4></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <hr></td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Department:</td>
+                        <td>department</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Room:</td>
+                        <td>room</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"> <h4>CONTACTS</h4></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <hr></td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Internal Phone:</td>
+                        <td>internal_phone</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Mobile Phone:</td>
+                        <td>mobile_phone</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">E-mail:</td>
+                        <td>email</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Skype:</td>
+                        <td>skype</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><h4>PROFILE INFO</h4></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <hr></td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Hire date:</td>
+                        <td>hire_date</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Status:</td>
+                        <td>status</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"> <h4>EMPLOYMENT INFO</h4></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <hr></td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Start of employment period:</td>
+                        <td>start_empl</td>
+                    </tr>
+                    <tr>
+                        <td style="color: gray; ">Working day duration:</td>
+                        <td>work_day</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><h4>ADDITIONAL MODULES</h4></td>
+                    </tr>
+                    <tr><td colspan="2"> <hr></td></tr>
+                    <tr>
+                        <td style="color: gray;">Vacation:</td>
+                        <td>vacation</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</script>
+<script defer="defer"  src="../dist/bundle.js"></script>
+<!--<script src="../public/js/xmlhttprequest.js"></script>-->
+<!--<script src="../public/js/fetch.js"></script>-->
+<!--<script src="../public/js/output.js"></script>-->
+<!--<script src="../public/js/authentication.js"></script>-->
+<!--<script src="../public/js/template.js"></script>-->
+</body>
+</html>
