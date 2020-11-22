@@ -7,22 +7,29 @@ const miniCss = require('mini-css-extract-plugin');
 
 module.exports = {
     mode:'development',
-    entry: __dirname + "/public/js/output.js",
+    entry: __dirname + "/public/js/index.js",
     output: {
         path: __dirname+"/dist",
         filename: 'bundle.js',
         library: "home",
     },
-    // devtool:"source-map",
+    devtool:"source-map",
     module: {
-        rules: [
+       rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
-                }
+                },
             },
+           {
+               test: /\.js$/,
+               exclude: /node_modules/,
+               use: {
+                   loader: "babel-loader"
+               },
+           },
             {
                 test: /\.html/,
                 loader: 'raw-loader'

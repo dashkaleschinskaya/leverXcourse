@@ -5,52 +5,11 @@
     <link rel="stylesheet" href="../dist/style.css">
     <title>Enter</title>
 </head>
-<body onload="   window.home.buttonsForEnter()">
-<header class="header">
-    <div class="container" style="display: flex;">
-        <a href="/views/index" class="logo" >Course Work</a>
-        <div class="for-enter" ></div>
-    </div>
-</header>
+<body>
 
-<div class="main">
-    <div class="container">
-    <div class="content view" style="display:flex;justify-content: space-evenly;margin-top: 70px">
+<div id="wrap-all"></div>
 
-            <form class="line" style="width:300px">
-                <h2>Регистрация</h2>
-                <label for="register-login">Введите логин:</label>
-                <input type="text" id="register-login" name="register-login" placeholder="Введите логин...">
-                <label>Введите пароль:</label>
-                <input  type="password" name="register-password" id="register-password" placeholder="Введите пароль...">
-                <label>Выберите роль:</label>
-                <div class="form_radio_group choice-role choice-enter" >
-                    <div class="form_radio_group-item">
-                        <input  type="radio" id="user-role" name="role" value="user" checked><label for="user-role">Пользователь</label>
-                    </div>
-                    <div class="form_radio_group-item">
-                        <input type="radio" id="editor-role" name="role" value="editor"><label for="editor-role">Редактор</label>
-                    </div>
-                </div>
-                <button onclick="window.home.personRegistration()">Save</button>
-            </form>
-
-            <form class="line" style="width:300px;">
-                <h2>Вход</h2>
-                <label  for="enter-login">Введите логин:</label>
-                <input  type="text" id="enter-login" name="enter-login" placeholder="Введите логин...">
-                <label>Введите пароль:</label>
-                <input  type="password" name="enter-password" id="enter-password" placeholder="Введите пароль...">
-                <button onclick="window.home.personEnter()">Enter</button>
-            </form>
-
-    </div>
-    </div>
-</div>
 <script src="../dist/bundle.js"></script>
-<!--<script src="../public/js/fetch.js"></script>-->
-<!--<script src="../public/js/output.js"></script>-->
-<!--<script src="../public/js/authentication.js"></script>-->
-<!--<script src="../public/js/template.js"></script>-->
+
 </body>
 </html>

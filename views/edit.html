@@ -5,49 +5,11 @@
     <link rel="stylesheet" href="../dist/style.css">
     <title>Edit Role</title>
 </head>
-<body onload="window.home.outputAllRegisteredPersons();  window.home.buttonsForEnter()">
-<header class="header">
-    <div class="container" style="display: flex;">
-        <a href="/views/index" class="logo" >Course Work</a>
-        <div class="for-enter" ></div>
-    </div>
-</header>
+<body >
 
-<div class="main">
-    <div class="container">
-        <div class="content view">
-            <div id="content-edit"></div>
-        </div>
-    </div>
-</div>
-<script type="text/template" id="table_thead_for_persons">
-    <thead>
-    <tr>
-        <th scope="col">Логин</th>
-        <th scope="col">Роли</th>
-    </tr>
-    </thead>
-</script>
-<script type="text/template" id="table_body_for_persons">
-    <tr>
-        <td>login</td>
-        <td> <div class="form_radio_group choice-role-i choice-edit">
-            <div class="form_radio_group-item">
-                <input  type="radio" id="user-login" name="role-i" value="user" onclick="window.home.editRole(this.id)"><label for="user-login">Пользователь</label>
-            </div>
-            <div class="form_radio_group-item">
-                <input type="radio" id="editor-login" name="role-i" value="editor" onclick="window.home.editRole(this.id)"><label for="editor-login">Редактор</label>
-            </div>  <div class="form_radio_group-item">
-            <input type="radio" id="admin-role-i" name="role-i" value="admin" disabled><label for="admin-role-i">Админ</label>
-        </div>
-        </div></td>
-    </tr>
-</script>
+<div id="wrap-all"></div>
+
 <script src="../dist/bundle.js"></script>
-<!--<script src="../public/js/fetch.js"></script>-->
-<!--<script src="../public/js/authentication.js"></script>-->
-<!--<script src="../public/js/editRole.js"></script>-->
-<!--<script src="../public/js/output.js"></script>-->
-<!--<script src="../public/js/template.js"></script>-->
+
 </body>
 </html>

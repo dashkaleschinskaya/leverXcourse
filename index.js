@@ -30,7 +30,7 @@ fs.readFile(__dirname+'/data.json',(error,data)=> {
 app.use(cors());
 
 app.get('/', (req, res) => {
-
+console.log(items)
     res.send(items)
 })
 
@@ -63,8 +63,8 @@ app.post('/search', (req, res) => {
           newObj.push(items.items[i])
         }
     }
-console.log(newObj)
-    console.log(typeof newObj)
+// console.log(newObj)
+//     console.log(typeof newObj)
        res.send(newObj)
 })
 
@@ -88,7 +88,7 @@ app.post('/registration', (req, res) => {
             })
 
             // persons.person.push(req.body)
-            console.log(persons)
+            // console.log(persons)
 
             fs.writeFile(__dirname + '/credentials.json', JSON.stringify(persons), function (err) {
                 if (err) {
@@ -174,6 +174,7 @@ app.get("/edit/editPage", function (req, res) {
             throw error;
         }
         person = JSON.parse(data.toString());
+        console.log(person)
         res.send(person)
     })
 });

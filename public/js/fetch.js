@@ -1,6 +1,6 @@
  class fetchClass {
    constructor (options) {
-       this.url = options.url;
+       this.url = "http://localhost:3000"+options.url;
        this.body = options.body;
        this.method = options.method;
    }
